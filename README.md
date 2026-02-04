@@ -1,4 +1,3 @@
-This repository contains the public codes of our research website, maintained by Peng He's team.
+This repository contains the public codes of the website for  the research group led by Stathis Megas.
 
-If you spot any inaccurate or outdated information, please let us know in the [issues session](https://github.com/Peng-He-Lab/Peng-He-Lab.github.io/issues).
 
