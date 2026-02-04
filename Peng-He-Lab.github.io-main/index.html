@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="https://humangenetics.ucsf.edu/sites/g/files/tkssra6541/f/Screenshot%202024-12-06%20at%2010.27.29%20AM.png" type="image/png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR7FS6S0JG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XR7FS6S0JG');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>He Lab - UCSF</title>
+    <style>
+        /* Part 1 styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .hero {
+            position: relative;
+            color: white;
+            text-align: center;
+            height: 400px; /* Adjust this height as needed */
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the area properly */
+            z-index: 1;
+        }
+
+        .hero svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .home-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 4rem 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #E0FFFF; /* Almost white cyan */
+            text-shadow: 2px 2px 4px rgba(224, 255, 255, 0.6); /* Light cyan shadow */
+            -webkit-text-stroke: 1px #F0FFFF; /* Even lighter cyan border */
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #E0FFFF; /* Almost white cyan */
+            text-shadow: 2px 2px 4px rgba(224, 255, 255, 0.6); /* Light cyan shadow */
+            -webkit-text-stroke: 0.5px #F0FFFF; /* Even lighter cyan border, thinner for smaller text */
+        }
+
+        section {
+            padding: 4rem 2rem;
+        }
+        /* Part 2 styles - People Section */
+        .people-section {
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .person-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: white;
+            transition: transform 0.2s;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .person-card img {
+            width: 180px; /* Slightly smaller to fit 3 columns */
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+        }
+
+        .person-card h4 {
+            margin: 0.5rem 0;
+            color: #2c3e50;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .role {
+            color: #3498db;
+            font-weight: 500;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        .person-bio {
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 1024px) {
+            .people-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+        }-
+
+        /* Research Highlights Styles */
+        .research-highlights {
+            padding: 4rem 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid #3498db;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .highlight-image:hover {
+            opacity: 0.9;
+        }
+
+        .highlight-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .highlight-content h3 {
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .highlight-content .journal {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .highlight-content .authors {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Part 3 Publications Styles */
+        .publications-section {
+            padding: 4rem 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .publications-list {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-left: 4px solid #3498db;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .publication-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .publication-item .journal {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            display: inline-block;
+        }
+
+        .publication-item .authors {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        /* Part 4 Contact */
+        .contact-section {
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+
+        .recruitment-notice {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            max-width: 800px;
+        }
+
+        .recruitment-notice h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 2rem auto;
+            font-size: 1.2rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        .section-subtitle {
+            color: #2c3e50;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .alumni-table-container {
+            margin-top: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .alumni-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .alumni-table th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #2c3e50;
+        }
+
+        .alumni-table td {
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .alumni-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .alumni-table {
+                min-width: 600px;
+            }
+        }
+
+        .collapsible-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collapsible-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem 0;
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+        }
+
+        .collapsible-content {
+            display: none;
+        }
+
+        .collapsible-content.active {
+            display: block;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.active {
+            transform: rotate(90deg);
+        }
+
+    /* Part 4 Poster Styles */
+    .lab-fun-container {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .lab-fun-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    </style>
+</head>
+<body>
+    <!-- Part 1 Content -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#people">People</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+          <img class="hero-background" src="materials/banner.jpg" alt="Hero background">
+          <div class="hero-content">
+              <h1>He Lab at UCSF</h1>
+              <p>Computational Spatial and Single-Cell Multi-Omics</p>
+          </div>
+        </div>
+        <div class="home-content">
+            <h2>About Our Lab</h2>
+            <p>
+                Our research group is innovating analytical and experimental workflows of transcriptomic and chromatin analyses in <strong>single cells</strong> and within <strong>spatial</strong> contexts of the tissue, to dissect the intricate relationships between genes, cells and tissues.
+            </p>
+
+            <p class="research-intro">Our research group mainly follows three directions:</p>
+
+            <ol class="research-directions">
+                <li>Construct ultra-high resolution cell atlases of healthy and altered tissues and organoids using advanced computational methods and strategic -omic sampling methods in single-cells and in space.</li>
+                <li>Develop computational workflows and algorithms to enable more robust and sensitive discoveries of novel cell populations, tissue niches, as well as cis- and trans-acting regulators in the gene regulatory network.</li>
+                <li>Dissect gene regulatory networks in single-cells by perturbations of organoids.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="research-highlights">
+        <h2 class="section-title">Research Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <a href="https://www.nature.com/articles/s41586-020-2536-x" target="_blank">
+                    <img class="highlight-image" src="materials/ENCODERNA.jpg" alt="Mouse embryo transcriptome">
+                </a>
+                <div class="highlight-content">
+                    <h3>The changing mouse embryo transcriptome at whole tissue and single-cell resolution</h3>
+                    <div class="journal">Nature (2020)</div>
+                    <p>17-tissue bulk RNA-seq study of organogenesis from e10.5 to P0; Immune-neural dominance; 34 major gene programs with TF-motif networks; Rest/NRSF regulated H3K27me3 de-repression; House-keeping gene transcriptional and post-transcriptional regulation; scRNA-seq of mouse limb development; Epigenomic annotation; Gene regulatory network inference from single-cell + multi-omic sequencing data. <a href="https://github.com/Peng-He-Lab/He-ENCODE-RNA-2020">GitHub</a></p>
+                    <div class="authors"><b><u>He P</u></b>*, Williams BA*, et al.</div>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <a href="https://www.cell.com/cell/fulltext/S0092-8674(22)01415-5" target="_blank">
+                    <img class="highlight-image" src="materials/lung.jpg" alt="Human fetal lung cell atlas">
+                </a>
+                <div class="highlight-content">
+                    <h3>A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates</h3>
+                    <div class="journal">Cell (2022)</div>
+                    <p>scRNA-seq map of 144 human fetal lung cell populations from 5 to 22 weeks post conception; Matched scATAC-seq and motif mapping; Proximal and distal niches with distinct fibroblasts; Organoid gain-of-function screen; Novel NEUROD1+ GHRL+ neuroendocrine lineage that mirrors Type-N small cell lung cancer. <a href="https://github.com/Peng-He-Lab/Human_fetal_lung_cell_atlas_2022" target="_blank">GitHub</a></p>
+                    <div class="authors"><b><u>He P</u></b>*, Lim K*, Sun D*, et al.</div>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <a href="https://www.nature.com/articles/s41586-023-06806-x" target="_blank">
+                    <img class="highlight-image" src="materials/Limb.jpg" alt="Human embryonic limb atlas">
+                </a>
+                <div class="highlight-content">
+                    <h3>A human embryonic limb cell atlas resolved in space and time</h3>
+                    <div class="journal">Nature (2023)</div>
+                    <p>scRNA-seq mapping of human embryonic limb from 5 to 9 weeks post conception; Visium-based Whole-tissue atlasing; Spatial axies regulators; Digit regulators tied to congenital limb syndromes; Two waves of muscle development with key regulators like MSC; Mice and humans integrated cell atlas. <a href="https://github.com/Peng-He-Lab/limbcellatlas" target="_blank">GitHub</a> </p>
+                    <div class="authors">Zhang B*, <b><u>He P</u></b>*, Lawrence JEG*, Wang S*, et al.</div>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <a href="https://www.science.org/doi/10.1126/sciimmunol.adf9988" target="_blank">
+                    <img class="highlight-image" src="materials/lungimmune.jpg" alt="Lung immune cell development">
+                </a>
+                <div class="highlight-content">
+                    <h3>Early human lung immune cell development and its role in epithelial cell fate</h3>
+                    <div class="journal">Science Immunology (2023)</div>
+                    <p>Temporal single-cell multiome (scBCR/αβTCR/γδTCR and CITE-seq) mapping of immune cells in the prenatal lung; non-productive TCR-based lymphoid lineage inference; B-1 cells and myeloids in the lung; ILC2 and NK dominance; T cell maturation after birth; Myeloid-epithelial interaction via IL-1β; Organoid scRNA-seq after IL1ß and IL13 induction. <a href="https://github.com/Peng-He-Lab/lung-immune-cell-atlas">GitHub</a> </p>
+                    <div class="authors">Barnes JL*, Yoshida M*, <b><u>He P</u></b>*, et al.</div>
+                </div>
+            </div>
+        </div>
+      
+       <div class="collapsible-section">
+        <div class="collapsible-header">
+            <span class="arrow">▶</span>
+            <h3 class="section-subtitle">Data</h3>
+        </div>
+        <div class="collapsible-content">
+            <div style="overflow-x: auto; max-width: 100%; margin: 2rem auto;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                    <thead>
+                        <tr style="background-color: #2c3e50; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Tissue Type</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Fetal lung</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Fetal lung</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Lung organoid</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Lung organoid</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Lung organoid</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Lung organoid</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Embryonic Limb</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #2c3e50;">Embryonic Limb</th>
+                        </tr>
+                    </thead>
+                 <tbody>
+                      <tr style="border: 1px solid #e2e8f0;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">Specific data</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/Human_fetal_lung_cell_atlas_2022" target="_blank">Human fetal lung</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/lung-immune-cell-atlas" target="_blank">Human fetal lung immune</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/Human_fetal_lung_cell_atlas_2022" target="_blank">Human TF OE tip organoid</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/lung-immune-cell-atlas" target="_blank">Human IL1B IL13 tip organoid</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/2023-Late-tip-organoid" target="_blank">Human fetal lung late tip organoid</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/2024_AT2_organoids" target="_blank">Human fetal lung AT2 organoid</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/limbcellatlas" target="_blank">Human embryonic limb</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://github.com/Peng-He-Lab/limbcellatlas" target="_blank">Mouse embryonic limb</a>
+                          </td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0; background-color: #f8f9fa;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">Study</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://pubmed.ncbi.nlm.nih.gov/36493756/" target="_blank">2022 Cell</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://pubmed.ncbi.nlm.nih.gov/38100545/" target="_blank">2023 Sci. Immunol.</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://pubmed.ncbi.nlm.nih.gov/36493756/" target="_blank">2022 Cell</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://pubmed.ncbi.nlm.nih.gov/38100545/" target="_blank">2023 Sci. Immunol.</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://pubmed.ncbi.nlm.nih.gov/36493780/" target="_blank">2023 Cell Stem Cell</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://www.embopress.org/doi/full/10.1038/s44318-024-00328-6" target="_blank">2025 EMBOJ</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://pubmed.ncbi.nlm.nih.gov/38057666/" target="_blank">2023 Nature</a></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;"><a href="https://www.nature.com/articles/s41586-020-2536-x" target="_blank">2020 Nature,</a><a href="https://pubmed.ncbi.nlm.nih.gov/38057666/" target="_blank">2023 Nature</a></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">scRNA-seq</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0; background-color: #f8f9fa;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">scATAC-seq</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">abTCR scRNA-seq</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0; background-color: #f8f9fa;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">gdTCR scRNA-seq</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">BCR scRNA-seq</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0; background-color: #f8f9fa;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">scCITE-seq</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">Visium</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                      </tr>
+                      <tr style="border: 1px solid #e2e8f0; background-color: #f8f9fa;">
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0;">Xenium</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;">✅</td>
+                          <td style="padding: 1rem; border: 1px solid #e2e8f0; text-align: center;"></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2 Content -->
+    <section id="people" class="people-section">
+        <h2 class="section-title">Lab Members</h2>
+        <div class="people-grid">
+          <div class="person-card">
+              <img src="materials/Peng.jpg" alt="Dr. Peng He">
+              <h4><a href="https://profiles.ucsf.edu/peng.he" target="_blank">Dr. Peng He</a></h4>
+              <p class="role">Principal Investigator</p>
+              <p class="person-bio">
+                  Caltech (PhD)<br>
+                  Cambridge (MA)<br>
+                  U of Hong Kong (BSc)
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Jianwen.png" alt="Dr. Jianwen Xie">
+              <h4>Dr. Jianwen Xie</h4>
+              <p class="role">Affiliate Assistant Professor</p>
+              <p class="person-bio">
+                  UCLA (PhD, MSc)<br>
+                  Jinan U (BEng)
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Finkbeiner.jpg" alt="Dr. Walter E. Finkbeiner">
+              <h4>Dr. Walter E. Finkbeiner</h4>
+              <p class="role">Visiting Professor Emeritus</p>
+              <p class="person-bio">
+                  U of Illinois (MD)<br>
+                  UCSF (PhD)
+              </p>
+          </div>
+          
+          <div class="person-card">
+              <img src="materials/Kostas_crop.png" alt="Dr. Konstantinos Stasinos">
+              <h4>Dr. Konstantinos Stasinos</h4>
+              <p class="role">Postdoctoral Researcher</p>
+              <p class="person-bio">
+                  Queen Mary (PhD)<br>
+                  U of Athens (MD)<br>
+                  Oxford (MSc)<br>
+                  <a href="https://graduate.ucsf.edu/mentoring-2026#:~:text=Konstantinos%20Stasinos%2C%20MD%2C%20PhD"
+           target="_blank" rel="noopener noreferrer">
+            🏅 UCSF Graduate Mentoring Award (2026)
+             </a>
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Yuefei.jpeg" alt="Dr. Yuefei Zhu">
+              <h4>Dr. Yuefei Zhu</h4>
+              <p class="role">Postdoctoral Researcher</p>
+              <p class="person-bio">
+                  Columbia (PhD)<br>
+                  Fudan (MSc, BSc)
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/York.jpeg" alt="Yujie (York) Zhang">
+              <h4>Yujie (York) Zhang</h4>
+              <p class="role">PhD Student</p>
+              <p class="person-bio">
+                  Harvard (MSc)<br>
+                  UCSD (BSc)<br>
+                  Co-advised with Dr. Theodoris
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Wenjiang.jpg" alt="Wenjiang Zhou">
+              <h4>Wenjiang Zhou</h4>
+              <p class="role">Junior Specialist</p>
+              <p class="person-bio">
+                  Imperial (MSc) <br>
+                  CUHK-Shenzhen (BSc) <br>
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Ana-Maria.png" alt="Ana-Maria Guerrero">
+              <h4>Ana-Maria Guerrero</h4>
+              <p class="role">Facility Manager</p>
+              <p class="person-bio">
+                  Managing laboratory infrastructure and resources
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Kathleen.png" alt="Jennifer Paloma">
+              <h4>Kathleen Daley</h4>
+              <p class="role">Administrative Assistant</p>
+              <p class="person-bio">
+                  Managing administrative operations
+              </p>
+          </div>
+                 
+          <div class="person-card">
+              <img src="materials/Steve.jpg" alt="Steve Han">
+              <h4>Steve Han</h4>
+              <p class="role">Visiting Software Engineer</p>
+              <p class="person-bio">
+                  San Jose State University (BSc)
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Jaeeun.png" alt="Jaeeun Park">
+              <h4>Jaeeun Park</h4>
+              <p class="role">Undergraduate Student</p>
+              <p class="person-bio">
+                  UC Berkeley Exchange Student<br>
+                  Yonsei University
+              </p>
+          </div>
+          
+          <div class="person-card">
+              <img src="materials/Bharathi.jpg" alt="Bharathi Arivazhagan">
+              <h4>Bharathi Arivazhagan</h4>
+              <p class="role">Undergraduate URAP Student</p>
+              <p class="person-bio">
+              UC Berkeley
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Ethan.jpg" alt="Ethan Boat">
+              <h4>Ethan Boat</h4>
+              <p class="role">Undergraduate URAP Student</p>
+              <p class="person-bio">
+              UC Berkeley
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Benjamin.png" alt="Benjamin Jo">
+              <h4>Benjamin Jo</h4>
+              <p class="role">Undergraduate URAP Student</p>
+              <p class="person-bio">
+              UC Berkeley
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Kevin.jpg" alt="Kevin Pan Luo">
+              <h4>Kevin Pan Luo</h4>
+              <p class="role">Undergraduate URAP Student</p>
+              <p class="person-bio">
+              UC Berkeley
+              </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Neha.jpg" alt="Neha Jessica Lozano">
+              <h4>Neha Jessica Lozano</h4>
+              <p class="role">Undergraduate URAP Student</p>
+              <p class="person-bio">
+              UC Berkeley
+          </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Mrunali.jpg" alt="Mrunali Thokadiwala">
+              <h4>Mrunali Thokadiwala</h4>
+              <p class="role">Visiting Researcher</p>
+              <p class="person-bio">
+              San Jose State U (MSc)<br>
+              Vellore Institute (MSc)<br>
+              VNSGU Surat (BSc)
+          </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Xinwei.jpeg" alt="Xinwei Li">
+              <h4>Xinwei Li</h4>
+              <p class="role">Visiting Researcher</p>
+              <p class="person-bio">
+              U of Queensland (MSc)<br>
+              U of Queensland (BA)
+          </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Ming.jpeg" alt="Ming Sun">
+              <h4>Ming Sun</h4>
+              <p class="role">Visiting Graduate Student</p>
+              <p class="person-bio">
+              Stanford (MSc of Biomedical Data Science)<br>
+              Southern Medical U (Clinical Medicine)
+          </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Ruijia.jpg" alt="Ruijia Tian">
+              <h4>Ruijia Tian</h4>
+              <p class="role">Visiting Undergraduate Student</p>
+              <p class="person-bio">
+              Xiamen U (MBBS)
+          </p>
+          </div>
+
+          <div class="person-card">
+              <img src="materials/Sijie.jpg" alt="Sijie Li">
+              <h4>Sijie Li</h4>
+              <p class="role">Visiting Undergraduate Student</p>
+              <p class="person-bio">
+              Southern U of Science and Technology
+          </p>
+          </div>
+
+          <div class="person-card">
+          <img src="materials/Poorvi.jpg" alt="Poorvi Vijay">
+          <h4>Poorvita Vijayananda</h4>
+          <p class="role">High School Intern</p>
+          <p class="person-bio">
+          Milpitas High School
+          </p>
+          </div>
+          
+          <div class="person-card">
+              <img src="materials/Guoyang.jpeg" alt="Guoyang San">
+              <h4>Guoyang San</h4>
+              <p class="role">Illustrator</p>
+              <p class="person-bio">
+              </p>
+          </div>
+        </div>
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                <span class="arrow">▶</span>
+                <h3 class="section-subtitle">Other Trainees and Past Lab Members</h3>
+            </div>
+            <div class="collapsible-content">
+                <div class="alumni-table-container">
+                    <table class="alumni-table">
+            <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Previous Role</th>
+                  <th>Institution</th>
+                  <th>Current Position</th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr>
+                  <td>Izabella Zamora</td>
+                  <td>BMI student (QBC journal club)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Rashad Reid Jr</td>
+                  <td>BMI student (Quaifying exam committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sanjay Rangavajjhala</td>
+                  <td>BMI student (Quaifying exam committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Christopher He</td>
+                  <td>DSCB student (Thesis exam committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sid Mahesh</td>
+                  <td>BMI student (Quaifying exam committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <!--
+                <tr>
+                  <td>Wanjun Gu</td>
+                  <td>BMI student (Thesis committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                -->
+                <tr>
+                  <td>Sara Smith</td>
+                  <td>BMI student (Quaifying exam committee and QBC journal club)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Jerry Wang</td>
+                  <td>BMS student (Thesis committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Madison Lotstein</td>
+                  <td>BMS student (Thesis committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Jayden Ross</td>
+                  <td>BMS student (Thesis committee)</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Zoe (Xintong) Chen</td>
+                  <td>BMI rotation student</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Zuzhi Jiang</td>
+                  <td>Tetrad rotation student</td>
+                  <td>UCSF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Alex Sun</td>
+                  <td>Undergraduate URAP Student</td>
+                  <td>UC Berkeley</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Peijun Liu</td>
+                  <td>Master student</td>
+                  <td>UCSF</td>
+                  <td>Research Associate at NCIRE</td>
+                </tr>
+                <tr>
+                  <td>Nathan Kuo</td>
+                  <td>Undergraduate URAP Student</td>
+                  <td>UC Berkeley</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Chawit Asavasaetakul</td>
+                  <td>Undergraduate URAP Student</td>
+                  <td>UC Berkeley</td>
+                  <td>Co-Founder of Avoice (YC W26)</td>
+                <tr>
+                  <td>Selina Shi</td>
+                  <td>Undergraduate Student</td>
+                  <td>UC Berkeley</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>John Lawrence</td>
+                  <td>Clinical PhD Student</td>
+                  <td>Sanger (Teichmann Lab)</td>
+                  <td>NIHR Clinical Lecturer at Cambridge</td>
+                </tr>
+                <tr>
+                  <td>Hanchen Wang</td>
+                  <td>PhD Student</td>
+                  <td>Cambridge (St Edmund's College) </td>
+                  <td>Postdoc at Genentech with Aviv Regev</td>
+                </tr>
+                <tr>
+                  <td>Simon Murray</td>
+                  <td>Bioinformatics Apprentice</td>
+                  <td>Sanger (CellgenIT and Teichmann Lab) </td>
+                  <td>Bioinformatics Apprentice at Sanger</td>
+                </tr>
+                <tr>
+                  <td>Austin Reed</td>
+                  <td>Research Assistant</td>
+                  <td>CRUK (Khaled Lab and Marioni Lab)</td>
+                  <td>CEO and Co-founder at IntercepTx</td>
+                </tr>
+                <tr>
+                  <td>Dan Zhang</td>
+                  <td>Remote PhD student visitor</td>
+                  <td></td>
+                  <td>Postdoc at Sanger with Jussi Taipale</td>
+                </tr>
+                <tr>
+                  <td>Weimin Lin</td>
+                  <td>Remote PhD student visitor</td>
+                  <td></td>
+                  <td>Postdoc at Cambridge with Sarah Teichmann</td>
+                </tr>
+                <tr>
+                  <td>Won Jun Kim</td>
+                  <td>Undergraduate Research Assistant</td>
+                  <td>Caltech (Wold Lab)</td>
+                  <td>MD-PhD student at Tri-I</td>
+                </tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+  </div>
+<!-- Lab Fun Section -->
+<div class="collapsible-section">
+    <div class="collapsible-header">
+        <span class="arrow">▶</span>
+        <h3 class="section-subtitle">Lab Fun</h3>
+    </div>
+    <div class="collapsible-content">
+        <div class="lab-fun-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px;">
+            <div>
+                <img src="materials/Nomination of Kostas.jpeg" alt="Kostas Mentoring Award" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">
+                Kostas won the UCSF Graduate Mentoring Award 2026 – thanks to his dedication and Yuefei's nomination!
+                </p>
+            </div>
+            <div>
+                <video autoplay loop muted playsinline style="max-width: 100%; display: block; margin: 0 auto;">
+                <source src="materials/YuefeiBD.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; margin-top: 10px; color: #666;">
+                Yuefei birthday celebration 2026
+                </p>
+            </div>
+            <div>
+                <video autoplay loop muted playsinline style="max-width: 100%; display: block; margin: 0 auto;">
+                <source src="materials/Holiday%20dinner.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; margin-top: 10px; color: #666;">
+                Winter holiday dinner 2025
+                </p>
+            </div>
+            <div>
+                <video autoplay loop muted playsinline style="max-width: 100%; display: block; margin: 0 auto;">
+                <source src="materials/6e4a79d37dac452b8cac8fa874657fa8.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; margin-top: 10px; color: #666;">
+                UC Botanic Garden trip 2025
+                </p>
+            </div>
+            <div>
+                <video autoplay loop muted playsinline style="max-width: 100%; display: block; margin: 0 auto;">
+                <source src="materials/v0200fg10000d4j7l8nog65kltn5664g.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; margin-top: 10px; color: #666;">
+                Monterey retreat 2025
+                </p>
+            </div>
+            <div>
+                <img src="materials/2025SummerHiking.gif" alt="Angel Island Hiking 2025" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">Angel Island Hiking 2025</p>
+            </div>
+            <div>
+                <img src="materials/FerryBuildingMarket.jpeg" alt="Ferry Building Market" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">Ferry Building Market 2025</p>
+            </div>
+            <div>
+                <img src="materials/2025KostasBDay-ezgif.com-video-to-gif-converter.gif" alt="Kostas Birthday Celebration" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">Birthday Celebration 2025</p>
+            </div>
+            <div>
+                <img src="materials/immunox_poster.jpeg" alt="ImmunoX Poster" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">ImmunoX Social 2025</p>
+            </div>
+            <div>
+                <img src="materials/2025SpringHiking-ezgif.com-video-to-gif-converter.gif" alt="Spring Hiking 2025" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">Spring Hiking 2025</p>
+            </div>
+            <div>
+                <img src="materials/2025SpringLunch.gif" alt="Spring Lunch 2025" class="lab-fun-image">
+                <p style="text-align: center; margin-top: 10px; color: #666;">Spring Lunch 2025</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Part 3 Content -->
+<section id="publications" class="publications-section">
+    </section>
+
+    <!-- Part 3 Content -->
+    <section id="publications" class="publications-section">
+        <h2 class="section-title">Publications (reverse chronological)</h2>
+        <div class="publications-list">
+          <div class="publication-item">
+            <a href="https://www.sciencedirect.com/science/article/pii/S1534580725004095" target="_blank"><strong>Single-cell transcriptomics identifies chondrocyte differentiation dynamics <i>in vivo</i> and <i>in vitro</i></strong></a>
+            <div class="journal">Developmental Cell (2025)</div>
+            <div class="authors">Lawrence JEG, Woods S, Roberts K, Sumanaweera D, Balogh P, Li T, Predeus AV, <b><u>He P</u></b>, Polanski K, Prigmore E, Tuck E, Mamanova L, Zhou D, Webb S, Jardine L, He X, Barker RA, Haniffa M, Flanagan AM, Young MJ, Behjati S, Bayraktar O, Kimber SJ, Teichmann SA</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://www.embopress.org/doi/full/10.1038/s44318-024-00328-6" target="_blank"><strong>A novel human fetal lung-derived alveolar organoid model reveals mechanisms of surfactant protein C maturation relevant to interstitial lung disease</strong></a>
+            <div class="journal">EMBO J (2025)</div>
+            <div class="authors">Lim K, Rutherford EN, Delpiano L, <b><u>He P</u></b>, <b>Lin W</b>, Sun D, Van den Boomen DJH, Edgar JR, Bang JH, Predeus A, Teichmann SA, Marioni JC, Matesic LE, Lee JH, Lehner PJ, Marciniak SJ, Rawlins EL, Dickens JA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/39672979/" target="_blank"><strong>Considerations for building and using integrated single-cell atlases</strong></a>
+              <div class="journal">Nat Methods (2024)</div>
+              <div class="authors">Hrovatin K, Sikkema L, Shitov VA, Heimberg G, Shulman M, Oliver AJ, Mueller MF, Ibarra IL, Wang H, Ramírez-Suástegui C, <b><u>He P</u></b>, Schaar AC, Teichmann SA, Theis FJ, Luecken MD</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/39567793/" target="_blank"><strong>A multi-omic atlas of human embryonic skeletal development</strong></a>
+              <div class="journal">Nature (2024)</div>
+              <div class="authors">To K, Fei L, Pett JP, Roberts K, Blain R, Polanski K, Li T, Yayon N, <b><u>He P</u></b>, Xu C, Cranley J, Moy M, Li R, Kanemaru K, Huang N, Megas S, Richardson L, Kapuge R, Perera S, Tuck E, Wilbrey-Clark A, Mulas I, Memi F, Cakir B, Predeus AV, Horsfall D, Murray S, Prete M, Mazin P, He X, Meyer KB, Haniffa M, Barker RA, Bayraktar O, Chédotal A, Buckley CD, Teichmann SA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/39415002/" target="_blank"><strong>A prenatal skin atlas reveals immune regulation of human skin morphogenesis</strong></a>
+              <div class="journal">Nature (2024)</div>
+              <div class="authors">Gopee NH, Winheim E, Olabi B, Admane C, Foster AR, Huang N, Botting RA, Torabi F, Sumanaweera D, Le AP, Kim J, Verger L, Stephenson E, Adão D, Ganier C, Gim KY, Serdy SA, Deakin C, Goh I, Steele L, Annusver K, Miah MU, Tun WM, Moghimi P, Kwakwa KA, Li T, Basurto Lozada D, Rumney B, Tudor CL, Roberts K, Chipampe NJ, Sidhpura K, Englebert J, Jardine L, Reynolds G, Rose A, Rowe V, Pritchard S, Mulas I, Fletcher J, Popescu DM, Poyner E, Dubois A, Guy A, Filby A, Lisgo S, Barker RA, Glass IA, Park JE, Vento-Tormo R, Nikolova MT, <b><u>He P</u></b>, Lawrence JEG, Moore J, Ballereau S, Hale CB, Shanmugiah V, Horsfall D, Rajan N, McGrath JA, O'Toole EA, Treutlein B, Bayraktar O, Kasper M, Progatzky F, Mazin P, Lee J, Gambardella L, Koehler KR, Teichmann SA, Haniffa M</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/39160302/" target="_blank"><strong>WebAtlas pipeline for integrated single-cell and spatial transcriptomic data</strong></a>
+              <div class="journal">Nat Methods (2024)</div>
+              <div class="authors">Li T, Horsfall D, Basurto-Lozada D, Roberts K, Prete M, Lawrence JEG, <b><u>He P</u></b>, Tuck E, Moore J, Yoldas AK, Babalola K, Hartley M, Ghazanfar S, Teichmann SA, Haniffa M, Bayraktar OA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38548988/" target="_blank"><strong>A single-cell atlas enables mapping of homeostatic cellular shifts in the adult human breast</strong></a>
+              <div class="journal">Nat Genet (2024)</div>
+              <div class="authors">Reed AD, Pensa S, Steif A, Stenning J, Kunz DJ, Porter LJ, Hua K, <b><u>He P</u></b>, Twigger AJ, Siu AJQ, Kania K, Barrow-McGee R, Goulding I, Gomm JJ, Speirs V, Jones JL, Marioni JC, Khaled WT</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38134877/" target="_blank"><strong>Automatic cell-type harmonization and integration across Human Cell Atlas datasets</strong></a>
+              <div class="journal">Cell (2023)</div>
+              <div class="authors">Xu C, Prete M, Webb S, Jardine L, Stewart BJ, Hoo R, <b><u>He P</u></b>, Meyer KB, Teichmann SA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38100545/" target="_blank"><strong>Early human lung immune cell development and its role in epithelial cell fate</strong></a>
+              <div class="journal">Sci Immunol (2023)</div>
+              <div class="authors">Barnes JL*, Yoshida M*, <b><u>He P</u></b>*, Worlock KB, Lindeboom RGH, Suo C, Pett JP, Wilbrey-Clark A, Dann E, Mamanova L, Richardson L, Polanski K, Pennycuick A, Allen-Hyttinen J, Herczeg IT, Arzili R, Hynds RE, Teixeira VH, Haniffa M, Lim K, Sun D, Rawlins EL, Oliver AJ, Lyons PA, Marioni JC, Ruhrberg C, Tuong ZK, Clatworthy MR, Reading JL, Janes SM, Teichmann SA, Meyer KB, Nikolic MZ</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38057666/" target="_blank"><strong>A human embryonic limb cell atlas resolved in space and time</strong></a>
+              <div class="journal">Nature (2023)</div>
+              <div class="authors">Zhang B*, <b><u>He P</u></b>*, Lawrence JEG*, Wang S*, Tuck E, Williams BA, Roberts K, Kleshchevnikov V, Mamanova L, Bolt L, Polanski K, Li T, Elmentaite R, Fasouli ES, Prete M, He X, Yayon N, Fu Y, Yang H, Liang C, Zhang H, Blain R, Chedotal A, FitzPatrick DR, Firth H, Dean A, Bayraktar OA, Marioni JC, Barker RA, Storer MA, Wold BJ, Zhang H, Teichmann SA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/37875112/" target="_blank"><strong>Maternally inherited siRNAs initiate piRNA cluster formation</strong></a>
+              <div class="journal">Mol Cell (2023)</div>
+              <div class="authors">Luo Y, <b><u>He P</u></b>, Kanrar N, Fejes Toth K, Aravin AA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36543915/" target="_blank"><strong>A spatially resolved atlas of the human lung characterizes a gland-associated immune niche</strong></a>
+              <div class="journal">Nat Genet (2023)</div>
+              <div class="authors">Madissoon E, Oliver AJ, Kleshchevnikov V, Wilbrey-Clark A, Polanski K, Richoz N, Ribeiro Orsi A, Mamanova L, Bolt L, Elmentaite R, Pett JP, Huang N, Xu C, <b><u>He P</u></b>, Dabrowska M, Pritchard S, Tuck L, Prigmore E, Perera S, Knights A, Oszlanczi A, Hunter A, Vieira SF, Patel M, Lindeboom RGH, Campos LS, Matsuo K, Nakayama T, Yoshida M, Worlock KB, Nikolic MZ, Georgakopoulos N, Mahbubani KT, Saeb-Parsy K, Bayraktar OA, Clatworthy MR, Stegle O, Kumasaka N, Teichmann SA, Meyer KB</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36493780/" target="_blank"><strong>Organoid modeling of human fetal lung alveolar development reveals mechanisms of cell fate patterning and neonatal respiratory disease</strong></a>
+              <div class="journal">Cell Stem Cell (2023)</div>
+              <div class="authors">Lim K, Donovan APA, Tang W, Sun D, <b><u>He P</u></b>, Pett JP, Teichmann SA, Marioni JC, Meyer KB, Brand AH, Rawlins EL</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36493756/" target="_blank"><strong>A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates</strong></a>
+              <div class="journal">Cell (2022)</div>
+              <div class="authors"><b><u>He P</u></b>*, Lim K*, Sun D*, Pett JP, Jeng Q, Polanski K, Dong Z, Bolt L, Richardson L, Mamanova L, Dabrowska M, Wilbrey-Clark A, Madissoon E, Tuong ZK, Dann E, Suo C, Goh I, Yoshida M, Nikolic MZ, Janes SM, He X, Barker RA, Teichmann SA, Marioni JC, Meyer KB, Rawlins EL</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36121125/" target="_blank"><strong>SOX9 maintains human foetal lung tip progenitor state by enhancing WNT and RTK signalling</strong></a>
+              <div class="journal">EMBO J (2022)</div>
+              <div class="authors">Sun D, Llora Batlle O, van den Ameele J, Thomas JC, <b><u>He P</u></b>, Lim K, Tang W, Xu C, Meyer KB, Teichmann SA, Marioni JC, Jackson SP, Brand AH, Rawlins EL</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/35549310/" target="_blank"><strong>Mapping the developing human immune system across organs</strong></a>
+              <div class="journal">Science (2022)</div>
+              <div class="authors">Suo C, Dann E, Goh I, Jardine L, Kleshchevnikov V, Park JE, Botting RA, Stephenson E, Engelbert J, Tuong ZK, Polanski K, Yayon N, Xu C, Suchanek O, Elmentaite R, Domínguez Conde C, <b><u>He P</u></b>, Pritchard S, Miah M, Moldovan C, Steemers AS, Mazin P, Prete M, Horsfall D, Marioni JC, Clatworthy MR, Haniffa M, Teichmann SA</div>
+          </div>
+          <div class="publication-item">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/33654293/" target="_blank"><strong>Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics</strong></a>
+              <div class="journal">Nat Med (2022)</div>
+              <div class="authors">Muus C, Luecken MD, Eraslan G, Sikkema L, Waghray A, Heimberg G, Kobayashi Y, Vaishnav ED, Subramanian A, Smillie C, Jagadeesh KA, Duong ET, Fiskin E, Torlai Triglia E, Ansari M, Cai P, Lin B, Buchanan J, Chen S, Shu J, Haber AL, Chung H, Montoro DT, Adams T, Aliee H, Allon SJ, Andrusivova Z, Angelidis I, Ashenberg O, Bassler K, Bécavin C, Benhar I, Bergenstråhle J, Bergenstråhle L, Bolt L, Braun E, Bui LT, Callori S, Chaffin M, Chichelnitskiy E, Chiou J, Conlon TM, Cuoco MS, Cuomo ASE, Deprez M, Duclos G, Fine D, Fischer DS, Ghazanfar S, Gillich A, Giotti B, Gould J, Guo M, Gutierrez AJ, Habermann AC, Harvey T, <b><u>He P</u></b>, Hou X, Hu L, Hu Y, Jaiswal A, Ji L, Jiang P, Kapellos TS, Kuo CS, Larsson L, Leney-Greene MA, Lim K, Litvinuková M, Ludwig LS, Lukassen S, Luo W, Maatz H, Madissoon E, Mamanova L, Manakongtreecheep K, Leroy S, Mayr CH, Mbano IM, McAdams AM, Nabhan AN, Nyquist SK, Penland L, Poirion OB, Poli S, Qi C, Queen R, Reichart D, Rosas I, Schupp JC, Shea CV, Shi X, Sinha R, Sit RV, Slowikowski K, Slyper M, Smith NP, Sountoulidis A, Strunz M, Sullivan TB, Sun D, Talavera-López C, Tan P, Tantivit J, Travaglini KJ, Tucker NR, Vernon KA, Wadsworth MH, Waldman J, Wang X, Xu K, Yan W, Zhao W, Ziegler CGK, NHLBI LungMap Consortium, Human Cell Atlas Lung</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32728245/" target="_blank"><strong>The changing mouse embryo transcriptome at whole tissue and single-cell resolution</strong></a>
+            <div class="journal">Nature (2020)</div>
+            <div class="authors"><b><u>He P</u></b>*, Williams BA*, Trout D, Marinov GK, Amrhein H, Berghella L, Goh ST, Plajzer-Frick I, Afzal V, Pennacchio LA, Dickel DE, Visel A, Ren B, Hardison RC, Zhang Y, Wold BJ</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32728248/" target="_blank"><strong>Perspectives on ENCODE</strong></a>
+            <div class="journal">Nature (2020)</div>
+            <div class="authors"><b>ENCODE Project Consortium</b>, Snyder MP, Gingeras TR, Moore JE, Weng Z, Gerstein MB, Ren B, Hardison RC, Stamatoyannopoulos JA, Graveley BR, Feingold EA, Pazin MJ, Pagan M, Gilchrist DA, Hitz BC, Cherry JM, Bernstein BE, Mendenhall EM, Zerbino DR, Frankish A, Flicek P, Myers RM</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32728249/" target="_blank"><strong>Expanded encyclopaedias of DNA elements in the human and mouse genomes</strong></a>
+            <div class="journal">Nature (2020)</div>
+            <div class="authors"><b>ENCODE Project Consortium</b>, Moore JE, Purcaro MJ, Pratt HE, Epstein CB, Shoresh N, Adrian J, Kawli T, Davis CA, Dobin A, Kaul R, Halow J, Van Nostrand EL, Freese P, Gorkin DU, Shen Y, He Y, Mackiewicz M, Pauli-Behn F, Williams BA, Mortazavi A, Keller CA, Zhang XO, Elhajjajy SI, Huey J, Dickel DE, Snetkova V, Wei X, Wang X, Rivera-Mulia JC, Rozowsky J, Zhang J, Chhetri SB, Zhang J, Victorsen A, White KP, Visel A, Yeo GW, Burge CB, Lécuyer E, Gilbert DM, Dekker J, Rinn J, Mendenhall EM, Ecker JR, Kellis M, Klein RJ, Noble WS, Kundaje A, Guigó R, Farnham PJ, Cherry JM, Myers RM, Ren B, Graveley BR, Gerstein MB, Pennacchio LA, Snyder MP, Bernstein BE, Wold B, Hardison RC, Gingeras TR, Stamatoyannopoulos JA, Weng Z</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32701060/" target="_blank"><strong>Odd-paired is a pioneer-like factor that coordinates with Zelda to control gene expression in embryos</strong></a>
+            <div class="journal">Elife (2020)</div>
+            <div class="authors">Koromila T, Gao F, Iwasaki Y, <b><u>He P</u></b>, Pachter L, Gergen JP, Stathopoulos A</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/29555645/" target="_blank"><strong>Epigenetic silencing of miR-125b is required for normal B-cell development</strong></a>
+            <div class="journal">Blood (2018)</div>
+            <div class="authors">Li G, So AY, Sookram R, Wong S, Wang JK, Ouyang Y, <b><u>He P</u></b>, Su Y, Casellas R, Baltimore D</div>
+          </div>
+          <div class="publication-item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/25575081/" target="_blank"><strong>Single-cell transcriptome analysis reveals dynamic changes in lncRNA expression during reprogramming</strong></a>
+            <div class="journal">Cell Stem Cell (2015)</div>
+            <div class="authors">Kim DH, Marinov GK, Pepke S, Singer ZS, <b><u>He P</u></b>, Williams B, Schroth GP, Elowitz MB, Wold BJ</div>
+          </div>
+
+
+
+    </section>
+
+    <!-- Part 4 Content -->
+    
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+
+        <div class="recruitment-notice">
+            <h3>Join Our Lab!</h3>
+            <p>We are currently seeking enthusiastic researchers at any levels especially:</p>
+            <!-- <p>• <a href="https://opportunities.ucsf.edu/content/open-postdoctoral-position-computational-genomics-and-systems-biology">Dry</a> or <a href="https://opportunities.ucsf.edu/content/open-postdoctoral-position-human-organoids-and-single-cell-multiomics-university-california">Wet</a> Postdocs </p> -->
+            <p>• Graduate Students (through <a href="https://dscb.ucsf.edu/" target="_blank">DSCB</a> , <a href="https://bms.ucsf.edu" target="_blank">BMS</a> and <a href="https://bmi.ucsf.edu" target="_blank">BMI</a> programs)</p>
+            <!-- <p>• <a href="https://aprecruit.ucsf.edu/JPF05334">Dry</a> or <a href="https://aprecruit.ucsf.edu/JPF05332">Wet</a> Research Assistants </p> -->
+            <p>• Undergraduate Students (via the <a href="https://research.berkeley.edu/urap/" target="_blank">Berkeley URAP</a>)</p>            
+            <p>If you're interested in joining our team, please reach out!</p>
+        </div>
+    <div class="contact-info">
+        <div class="contact-email">
+            peng.he在ucsf.edu
+        </div>
+    </div>
+    </section>
+  
+    <!-- New Affiliations Section -->
+    <div class="affiliations" style="text-align: center; margin-top: 2rem;">
+        <h3>Our Affiliations</h3>
+        <ul style="list-style: none; padding: 0;">
+        <li style="display: inline; margin: 0 1rem;">
+          <a href="https://cancer.ucsf.edu/people/he.peng" target="_blank">
+          <img src="materials/Helen-cancer-icon.png" alt="Helen Diller Cancer Center" style="width: 165px; height: 50px; object-fit: contain;">
+          </a>
+        </li>
+        <li style="display: inline; margin: 0 1rem;">
+          <a href="https://humangenetics.ucsf.edu/content/peng-he-phd" target="_blank">
+          <img src="materials/human-genetics-icon.png" alt="Institute of Human Genetics" style="width: 165px; height: 50px; object-fit: contain;">          
+          </a>
+        </li>
+        <li style="display: inline; margin: 0 1rem;">
+          <a href="https://immunox.ucsf.edu" target="_blank">
+          <img src="materials/immunox-icon.png" alt="ImmunoX" style="width: 165px; height: 50px; object-fit: contain;">          
+          </a>
+        </li>
+        <li style="display: inline; margin: 0 1rem;">
+          <a href="https://stemcell.ucsf.edu/people/peng-he-phd" target="_blank">
+          <img src="materials/stemcell-icon.png" alt="Broad Center for Stem Cells" style="width: 165px; height: 50px; object-fit: contain;">          
+          </a>
+        </li>
+        <li style="display: inline; margin: 0 1rem;">
+          <a href="https://ccmbm.ucsf.edu/" target="_blank">
+          <img src="materials/CCMBM-icon.png" alt="Core Center for Musculoskeletal Biology and Medicine" style="width: 165px; height: 50px; object-fit: contain;">          
+          </a>
+        </li>
+        <li style="display: inline; margin: 0 1rem;">
+          <a href="https://bakarinstitute.ucsf.edu/people-at-bakar/peng" target="_blank">
+          <img src="materials/BCHSI-icon.png" alt="Bakar Computational Health Sciences Institute" style="width: 165px; height: 50px; object-fit: contain;">          
+          </a>
+        </li>  
+        </ul>
+        </div>  
+        </div>
+    </section>
+    <script>
+    document.querySelectorAll('.collapsible-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          const arrow = this.querySelector('.arrow');
+          content.classList.toggle('active');
+          arrow.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
