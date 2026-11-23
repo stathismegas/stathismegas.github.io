@@ -466,6 +466,96 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     </style>
+    
+<style>
+.lineage {
+  max-width: 850px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+.lineage h2 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+.lineage-intro {
+  color: #718096;
+  margin-bottom: 2.5rem;
+}
+.lineage-stage {
+  position: relative;
+  padding: 0 0 2rem 28px;
+  margin-left: 14px;
+  border-left: 2px solid #dce5ed;
+  text-align: left;
+}
+.lineage-stage::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3498db;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #dce5ed;
+}
+.lineage-stage h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+.lineage-stage p {
+  margin: 0 0 15px;
+  color: #718096;
+  font-size: .9rem;
+}
+.mentor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+.mentor-card {
+  display: block;
+  background: #fff;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #2c3e50;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+  transition: transform .2s, box-shadow .2s;
+}
+.mentor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.1);
+}
+.mentor-card strong {
+  display: block;
+  font-size: 1rem;
+}
+.mentor-card span {
+  display: block;
+  margin-top: 5px;
+  color: #718096;
+  font-size: .82rem;
+}
+.lineage-current {
+  background: #17365d;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-left: 42px;
+  text-align: left;
+}
+.lineage-current span {
+  display: block;
+  color: #cbd5e1;
+  font-size: .85rem;
+  margin-top: 5px;
+}
+</style>
 </head>
 <body>
     <!-- Part 1 Content -->
